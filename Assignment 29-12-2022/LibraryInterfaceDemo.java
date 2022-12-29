@@ -22,10 +22,12 @@ class KidUser implements LibraryUser{
 		if(age<12)
 		{
 			System.out.println("You have successfully registered under a Kids Account.");
+			System.out.println();
 			}
 		else
 		{
-			System.out.println("Sorry, Age must be less then 12 to register as a kid. ");
+			System.out.println("Sorry, Age must be less then 12 to register as a Kid. ");
+			System.out.println();
 		}
 		
 	}
@@ -37,10 +39,12 @@ class KidUser implements LibraryUser{
 		if(bookType.equalsIgnoreCase("kids"))
 		{
 			System.out.println("Book issued successfully,\nPlease return the book within 10 days.");
+			System.out.println();
 			
 		}
 		else {
 			System.out.println("Oops, you are allowed to take only kids books.");
+			System.out.println();
 		}
 	}
 	
@@ -58,11 +62,13 @@ class AdultUser implements LibraryUser
 		int age=sc.nextInt();
 		if(age>=12)
 		{
-			System.out.println("You have successfully registered under a Adult Account.");
+			System.out.println("You have successfully registered under an Adult Account.");
+			System.out.println();
 			}
 		else
 		{
 			System.out.println("Sorry, Age must be greater then 12 to register as an Adult. ");
+			System.out.println();
 		}
 		
 	}
@@ -70,17 +76,18 @@ class AdultUser implements LibraryUser
 	@Override
 	public void requestBook() {
 
-		System.out.println("Enter your Booktype: ");
+		System.out.println("Enter your booktype: ");
 		bookType=sc.next();
 		if(bookType.equalsIgnoreCase("Fiction"))
 		
 
 		{
-			System.out.println("Book issued successfully,\nPlease return the book within 7 days");
-			
+			System.out.println("Book issued successfully,\nPlease return the book within 7 days.");
+			System.out.println();
 		}
 		else {
-			System.out.println("Oops, you are allowed to take only Adult Fiction books");
+			System.out.println("Oops, you are allowed to take only adult Fiction books.");
+			System.out.println();
 		}
 	}
 		
@@ -97,8 +104,8 @@ public class LibraryInterfaceDemo {
 		AdultUser adult=new AdultUser();
 		do
 		{
-		System.out.println("Welcome to The Library.");
-		System.out.println("Which book you want to choose ?? \n1)Kid \n2)Fiction \n3)Exit");
+		System.out.println("Welcome to the Library.");
+		System.out.println("Which book you want to choose?? \n1)Kid \n2)Fiction \n3)Exit");
 		int choice= sc.nextInt();
 		switch (choice)
 		{
@@ -110,8 +117,8 @@ public class LibraryInterfaceDemo {
 			adult.registerAccount();
 			adult.requestBook();
 			break;*/
-		case 1:
-			System.out.println("Choose an option:\n1)Register \n2)Borrow Book");
+		case 1:                                 //nested SwitchCase
+			System.out.println("Choose an option:\n1)Resister \n2)Borrow");
 			int ch=sc.nextInt();
 			switch(ch) {
 			case 1:
@@ -120,10 +127,11 @@ public class LibraryInterfaceDemo {
 			case 2:
 				kid.requestBook();
 				break;
-			}			
+				
+			}				System.out.println();		
 			break;
 		case 2:
-			System.out.println("option\n1)Resister. \n2)Borrow Book.");
+			System.out.println("Choose an option: \n1)Resister \n2)Borrow");
 			int chi=sc.nextInt();
 			switch(chi) {
 			case 1:
@@ -132,8 +140,9 @@ public class LibraryInterfaceDemo {
 			case 2:
 				adult.requestBook();
 				break;
-			}			
+			}				System.out.println();		
 			break;
+
 		case 3 :
 			System.exit(0);
 			default :
